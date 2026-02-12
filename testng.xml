@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Settings Page Automation Suite" verbose="1" parallel="false">
+
+    <!-- Listeners -->
+    <listeners>
+        <listener class-name="org.example.tests.TestListener"/>
+    </listeners>
+
+    <!-- Global Parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://192.168.3.178:8000"/>
+
+    <test name="Settings Page Tests">
+
+        <classes>
+            <!-- Change Password Test -->
+            <class name="org.example.tests.SettingsTest">
+                <methods>
+                    <include name="changePasswordTest"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+
+</suite>
