@@ -109,5 +109,11 @@ export default class SettingsPage {
       .isVisible();
   }
 
+   async isGivenPPasswordIncorrectError(): Promise<boolean> {
+       return await this.page
+         .locator("current_password-error")
+         .isVisible();
+     }
+
 
 }
