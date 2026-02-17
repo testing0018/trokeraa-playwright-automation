@@ -68,7 +68,7 @@ export default class SettingsPage {
   async enterCurrentPassword(password: string) {
     await this.type(this.page.locator("input[name='current_password']"),password);
   }
-
+x
   async enterNewPassword(password: string) {
     await this.type(
       this.page.locator("input[name='new_password']"), password);

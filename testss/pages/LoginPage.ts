@@ -1,8 +1,8 @@
 import { Page, Locator, expect } from '@playwright/test';
 import * as speakeasy from 'speakeasy';
 
-export class LoginPage {
-  readonly page: Page;
+ export class LoginPage {
+   readonly page: Page;
 
   private readonly URL = 'http://192.168.3.178:8000/login';
   private readonly TFA_SECRET = 'M4TXOJQI6V5XCHUU';

@@ -42,22 +42,22 @@ export default defineConfig({
       },
     },
 
-    /* ===== ANDROID ===== */
-    {
-      name: 'Android Chrome',
-      use: {
-        ...devices['Pixel 5'],       // Android device emulation
-        headless: false,
-      },
-    },
+    //* ===== ANDROID ===== */
+   // {
+    //  name: 'Android Chrome',
+     // use: {
+      //  ...devices['Pixel 5'],       // Android device emulation
+     //   headless: false,
+      //},
+   // },
 
-    /* ===== iOS ===== */
-    {
-      name: 'iOS Safari',
-      use: {
-        ...devices['iPhone 13'],     // iOS device emulation
-        headless: false,
-      },
-    },
+    ///* ===== iOS ===== */
+    //{
+     // name: 'iOS Safari',
+     // use: {
+        //...devices['iPhone 13'],     // iOS device emulation
+       // headless: false,
+      //},
+   // },
   ],
 });
