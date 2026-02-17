@@ -27,5 +27,13 @@ for (const data of ComplianceForm) {
     await deposit.EnterEstimatedAmount(data.Estimated);
     await deposit.CountryOfSenderBank(data.SenderBank);
     await deposit.SubmitButton();
+
+
+    await login.open();
+        await login.enterEmail('ajith.vb@hivelance.com');
+        await login.enterPassword('Vishwa@123');
+        await login.clickSignIn();
+        await login.enterValidTfaCode();
+        await login.clickTfaSubmit();
   });
 }
