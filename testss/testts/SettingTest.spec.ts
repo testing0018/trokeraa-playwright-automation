@@ -34,8 +34,15 @@ const changePasswordData = [
 
 /* ================= TEST ================= */
 
-for (const data of changePasswordData) {
+for (const data of changePasswordData)
+   //changePasswordData is expected to be an array of test data objects.
+      //for...of loops over each item in the array.
+      //Each item is assigned to the variable data.
+      {
   test(`Change Password | ${JSON.stringify(data)}`, async ({ page, browser }) => {
+     //This defines a test case.
+     //Uses a template string.
+     // JSON.stringify(data) converts the test data object into a readable string.
 
     const login = new LoginPage(page);
     const settings = new SettingsPage(page);
