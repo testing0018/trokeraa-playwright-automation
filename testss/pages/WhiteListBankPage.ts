@@ -46,6 +46,10 @@ export class WhiteListBank {
             await this.click(this.page.locator("(//button[@type='submit'])[1]"));
 
                 }
+            async submitttChanges(){
+                        await this.click(this.page.locator("(//button[@type='submit'])[1]"));
+
+                            }
     async enterAccountType(){
             await this.type(this.page.locator("//input[@id='account_type']");
                             }
