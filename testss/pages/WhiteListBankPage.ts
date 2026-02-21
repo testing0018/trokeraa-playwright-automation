@@ -1,9 +1,9 @@
 import { Page, Locator } from '@playwright/test'
 
-export class WhiteListBank {
+export default class WhiteListBankPage {
     readonly page:Page;
 
-    constructor(page:page){
+    constructor(page:Page){
          this.page = page;
         }
     //Helpers
@@ -12,11 +12,11 @@ export class WhiteListBank {
         await locator.waitFor({state: 'visible'});
         await locator.click();
         }
-    async type(locator:Locator,value:string){
+    async type(locator: Locator,value: string){
         await locator.waitFor({state:'visible'});
         await locator.fill(value);
         }
-    async selectByValue(locator:Locator, value:string){
+    async selectByValue(locator: Locator,value: string){
         await locator.waitFor({state: 'visible'});
         await locator.selectOption(value);
         }
@@ -29,30 +29,25 @@ export class WhiteListBank {
     async openWhitelist(){
         await this.click(this.page.locator("//h6[normalize-space()='Registrar cuenta bancaria para retiros']"));
         }
-    async selectBank(){
-        await this.selectByValue(this.page.locator("'bank_name'"));
+    async selectBank(bankValue: string){
+        await this.selectByValue(this.page.locator("//select[@id='bank_name']"),bankValue);
         }
-    async enterClabeId(){
-        await this.type(this.page.locator("(//input[@id='clabe_id'])[1]"));
-        }
-    async enterConfirmAccount(){
-            await this.type(this.page.locator("//input[@id='confirm_account_number']"));
+    //async enterClabeId(value: string){
+        //await this.type(this.page.locator("(//input[@id='clabe_id'])[1]"),value);
+       // }
+    async enterConfirmAccount(value: string){
+            await this.type(this.page.locator("//input[@id='confirm_account_number']"),value);
             }
-    async enterAccount(){
-                await this.click(this.page.locator("//input[@id='account_number']"));
-                    }
+    async enterAccount(value: string){
+                await this.type(this.page.locator("//input[@id='account_number']"),value);
+           }
 
     async submitChanges(){
             await this.click(this.page.locator("(//button[@type='submit'])[1]"));
+           }
 
-                }
-            async submitttChanges(){
-                        await this.click(this.page.locator("(//button[@type='submit'])[1]"));
-
-                            }
-    async enterAccountType(){
-            await this.type(this.page.locator("//input[@id='account_type']");
-                            }
-
+    async enterAccountType(value: string){
+            await this.type(this.page.locator("//input[@id='account_type']"),value);
 
     }
+}

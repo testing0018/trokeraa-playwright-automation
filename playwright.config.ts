@@ -16,7 +16,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   /* HTML report */
-  reporter: 'html',
+  reporter:  [['html', { open: 'never' }]],
 
   /* Shared settings */
   use: {
@@ -24,12 +24,24 @@ export default defineConfig({
     actionTimeout: 90_000,
     navigationTimeout: 60_000,
 
+     screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
+
     launchOptions: {
       slowMo: 500,                   // ✅ SEE ACTIONS CLEARLY
-    },
 
-    trace: 'on-first-retry',
+        // ✅ SCREENSHOT
+           screenshot: 'only-on-failure',
+
+        // ✅ VIDEO
+           video: 'retain-on-failure',
+
+        // ✅ TRACE
+           trace: 'retain-on-failure',
+
   },
+},
 
   /* Projects */
   projects: [
@@ -46,7 +58,7 @@ export default defineConfig({
    // {
     //  name: 'Android Chrome',
      // use: {
-      //  ...devices['Pixel 5'],       // Android device emulation
+      //  ...devices['Pixel 5'],  // Android device emulation
      //   headless: false,
       //},
    // },
