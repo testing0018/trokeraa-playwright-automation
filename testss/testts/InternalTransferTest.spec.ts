@@ -31,7 +31,7 @@ const InternalTransferData = [
      isValid: false,
      },
 
-      ❌ CURRENCY VALIDATION
+
      {
        scenario: 'Invalid - currency not selected',
       amount: '1',
